@@ -1,13 +1,28 @@
-<p>Find all HTML elements with class="red", in any HTML document - recursive soluttion</p>
-<hr>
-<ul>
-  <li>Item</li>
-  <li>Item</li>
-  <li class="red">Make me red</li>
-  <li>Item
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Find all HTML elements with class="red", in any HTML document - recursive soluttion</p>
+    <hr>
     <ul>
-      <li class="red">Make me red, too</li>
+        <li>Item</li>
+        <li>Item</li>
+        <li class="red">Make me red</li>
+        <li>Item
+            <ul>
+                <li class="red">Make me red, too</li>
+            </ul>
+        </li>
+        <li>Item</li>
     </ul>
-  </li>
-  <li>Item</li>
-</ul>
+    <script src= "./HW_1_Recursions.js" ></script>
+</body>
+
+</html>

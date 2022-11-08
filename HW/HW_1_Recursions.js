@@ -19,3 +19,4 @@ function traverseDOM(node) {
   
   traverseDOM(document.body);
   
+  
