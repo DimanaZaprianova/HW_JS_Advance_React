@@ -240,6 +240,8 @@
 
 // for ( var x = 0; x < rulers.length; x++ ){
 //          if (rulers[x][2]-rulers[x][1]> 15){
+
+
 // 	console.log(`${toCamelCaseCyr(rulers[x][0])} е управлявал ${rulers[x][2]-rulers[x][1]} години.`);
 //         };
 // };
