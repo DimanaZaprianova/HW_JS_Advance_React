@@ -184,24 +184,28 @@
 
 /* ----------------------------------- new ---------------------------------- */
 // Do not change the object
-const counter = {
-	currentCount : 0,
-	tick(){
-		this.currentCount++;
-		console.log(this.currentCount);
-	}
-}
+// const counter = {
+// 	currentCount : 0,
+// 	tick(){
+// 		this.currentCount++;
+// 		console.log(this.currentCount);
+// 	}
+// }
 
-// fix the problem in countdown function
+// // fix the problem in countdown function
 
-function countdown(times) {
+// function countdown(times) {
 	
     
-    const delay = 1000;
-	while(times){
+//     const delay = 1000;
+// 	while(times){
         
-		setTimeout(counter.tick.bind(counter), delay*times);
-		times--;
-	}
-}
-countdown(3);
+// 		setTimeout(counter.tick.bind(counter), delay*times);
+// 		times--;
+// 	}
+// }
+// countdown(3);
+
+/* ----------------------------------- new ---------------------------------- */
+
+
