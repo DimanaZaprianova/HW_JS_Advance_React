@@ -195,14 +195,13 @@ const counter = {
 // fix the problem in countdown function
 
 function countdown(times) {
-	let x=times;
-    var f = counter.tick.call(counter);
+	
+    
     const delay = 1000;
-	while(x){
+	while(times){
         
-		setTimeout(f, delay*x);
-		x--;
+		setTimeout(counter.tick.bind(counter), delay*times);
+		times--;
 	}
 }
-
 countdown(3);
