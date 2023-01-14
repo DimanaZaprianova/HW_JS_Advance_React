@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nested fetch requests demo</title>
+</head>
+<body>
+	<div>
+    
+        <img src="../HW/HEY.jpg" alt="Hey You" class="imgHey">
+    
+    
+        <img src="../HW/wish.png" alt="Wish You were Here" class="imgWish">
+    
+    </div>
+	<div class="content"></div>
+	<script>
+		function doSomethingWithData(data) {
+			dom.content.innerHTML = data;
+		}
+		function doSomethingElseWithData(data) {
+			dom.content.innerHTML += `<br>${data}`;
+		}
+
+		function processResponse(r) {
+			if(r.status === 200){
+				return r.text()
+			}else{
+				throw new Error(`Error: ${r.status}`)
+			}
+		}
+
+		const url = ['http://127.0.0.1:5500/HW/Hey%20You.txt', 'http://127.0.0.1:5500/HW/Wish%20You%20Were%20Here.txt'];
+
+		const dom = {
+			'imgHey': document.querySelector('.imgHey'),
+            'imgWish' : document.querySelector('.imgWish'),
+			'content': document.querySelector('.content')
+		}
+
+		dom.imgHey.addEventListener('click', function (e) {
+			fetch(url[0])
+			.then( r => processResponse(r) )
+			.then( text => {
+				doSomethingWithData(text);
+				return fetch('http://127.0.0.1:5500/HW/Hey%20You.txt')
+			})
+			.then( r => processResponse(r) )
+			.then( text => doSomethingElseWithData(text) )
+			.catch( err => console.log(err) )
+		})
+
+        dom.imgWish.addEventListener('click', function (e) {
+			fetch(url[0])
+			.then( r => processResponse(r) )
+			.then( text => {
+				doSomethingWithData(text);
+				return fetch('http://127.0.0.1:5500/HW/Hey%20You.txt')
+			})
+			.then( r => processResponse(r) )
+			.then( text => doSomethingElseWithData(text) )
+			.catch( err => console.log(err) )
+		})
+
+	</script>
+</body>
+</html>
